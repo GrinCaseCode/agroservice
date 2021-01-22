@@ -500,7 +500,7 @@ transition: all 0.3s;
 .arrows_main .slick-prev {
 	left: -20px;
 }
-.arrows_main .slick-next {
+.arrows_main .slick-next { 
 	right: -20px;
 }
 .title-section span {
