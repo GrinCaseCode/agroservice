@@ -394,7 +394,7 @@ color: #ffffff;
 }
 .sidebar-content ul {
 	padding: 30px 25px;
-	padding-bottom: 0;
+	padding-bottom: 15px;
 }
 .sidebar-content li a {
 	line-height: 24px;
