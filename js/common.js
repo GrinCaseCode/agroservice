@@ -56,7 +56,8 @@ $has_child = $(".menu li").has("ul");
 		});	
 });
 
-$(".btn-sidebar").click(function() {
+$(".btn-sidebar").click(function(e) {
+	e.preventDefault();
 	$(this).find(".sandwich").toggleClass("active");
 		$(".sidebar-content").slideToggle(200);
 });
