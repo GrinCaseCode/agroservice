@@ -832,6 +832,9 @@ body {
 .contacts .block-form {
     padding: 20px;
 }
+.article__image {
+    height: 215px;
+}
 }
 
 /* Custom, iPhone Retina */
