@@ -1767,3 +1767,45 @@ transform: none;
 .arrows_right .slick-prev {
 	right: 72px;
 }
+.tabs-about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.tabs-about li {
+	padding: 0 9px;
+}
+.tabs-about li a {
+	width: 240px;
+	height: 60px;
+	font-weight: 700;
+text-align: center;
+letter-spacing: -0.02em;
+color: #062D1D;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: 1px solid #D8EEE5;
+	border-radius: 8px;
+	transition: all 0.3s;
+}
+.tabs-about li.active a,
+.tabs-about li a:hover {
+	background-color: #3AA97C;
+	color: #fff;
+}
+.about .title-section {
+	padding-bottom: 38px;
+}
+.about {
+	padding-bottom: 80px;
+}
+.about__image img {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.about .item-dealer {
+	margin-top: 0;
+	margin-bottom: 35px;
+}
