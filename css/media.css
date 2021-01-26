@@ -61,7 +61,12 @@
 	margin-left: -15px;
 	margin-right: -15px;
 }
+.sidebar-nav {
+    width: 305px;
+    }
 }
+
+
 @media only screen and (max-width : 1320px) {
 .header {
 	font-size: 13px;
@@ -72,8 +77,8 @@
 .sidebar-nav {
     width: 290px;
     }
-    .sidebar-content li {
-    margin-bottom: 26px;
+.sidebar-content li a {
+    padding: 15px 30px;
 }
 .billbord .container {
     padding-left: 325px;
@@ -124,6 +129,12 @@ display: none;
 .item-news {
     max-width: 365px;
 }
+.menu li a {
+    padding: 20px 27px;
+    }
+    .sidebar-nav {
+    width: 270px;
+    }
 }
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
@@ -197,10 +208,48 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+.sidebar-nav {
+    width: 212px;
+}
+.btn-sidebar .sandwich {
+    margin-right: 10px;
+}
+.btn-sidebar {
+    font-size: 12px;
+}
+.menu li a {
+    padding: 20px 15px;
+}
+.item-product__name {
+    font-size: 15px;
+    line-height: 21px;
+}
+.item-product__price {
+    font-size: 19px;
+}
+.billbord .container {
+    padding-left: 255px;
+}
+.tabs li a {
+    font-size: 16px;
+    width: 200px;
+    }
+    .tables-wrap .table-feature:first-child {
+        width: 45%;
+    }
+     .tables-wrap .table-feature:last-child {
+        width: 55%;
+    }
+    .table-feature table td {
+    padding: 11px 14px;
+}
+.recomendation {
+    padding-bottom: 50px;
+}
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width : 991px) {
 
 .header__right {
     display: none;
@@ -395,6 +444,53 @@ body {
 }
 #map {
     height: 400px;
+}
+.catalog-page {
+    padding-bottom: 60px;
+}
+.menu li a {
+    height: auto;
+    text-align: left;
+}
+.menu ul {
+    padding: 0;
+    background-color: transparent;
+}
+.menu li:hover a {
+    background-color: transparent;
+     color: #062d1d;
+}
+.menu ul li a:hover,
+.menu li a:hover {
+    color: #fff;
+    background-color: #3AA97C;
+}
+.menu ul li a {
+    padding: 15px 20px;
+        color: #062d1d;
+}
+.sidebar-content ul ul {
+    position: relative;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+    border: none;
+    width: 100%;
+    display: none;
+}
+.sidebar-content a i {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.sidebar-content ul {
+    padding: 0;
+}
+.catalog-page,
+.card {
+    min-height: auto;
 }
 }
 
@@ -663,6 +759,47 @@ body {
 .contacts .title-section {
     padding-bottom: 15px;
 }
+.more-wrap {
+    padding-top: 30px;
+}
+.catalog-page {
+    padding-bottom: 40px;
+}
+.col_pr {
+    padding-right: 15px;
+}
+.tabs li a {
+    width: 100%;
+    font-size: 14px;
+}
+.tabs li {
+    flex: 1;
+}
+.tables-wrap .table-feature {
+    width: 100% !important;
+}
+.tables-wrap {
+    display: block;
+}
+.card .tab-container {
+    margin-bottom: 40px;
+}
+.card-right {
+    padding-top: 0;
+    text-align: left;
+}
+.card .title-section {
+    padding-bottom: 15px;
+}
+.recomendation .title-section {
+    padding-bottom: 0;
+}
+.card__info {
+    padding-left: 15px;
+}
+.table-feature table td:last-child {
+    border-right: none;
+}
 }
 @media (max-width: 576px) {
     .item-article {
@@ -834,6 +971,68 @@ body {
 }
 .article__image {
     height: 215px;
+}
+.row_products > div {
+    margin-top: 10px;
+    padding: 0 5px;
+}
+.row_products {
+    margin: 0 -5px;
+}
+.item-product__name {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 12px 0;
+    margin-bottom: 15px;
+}
+.item-product__price {
+    font-size: 16px;
+}
+.item-product__image {
+    height: 105px;
+    margin-bottom: 10px;
+    }
+    .more-wrap {
+        padding-top: 20px;
+    }
+    .slider-for__item {
+    padding: 15px;
+    height: 275px;
+}
+.slider-nav__item {
+    margin: 9px 4px;
+    height: 80px;
+}
+.slider-nav {
+    margin: 0 -4px;
+    margin-top: 5px;
+}
+.feature-card__value {
+    font-size: 16px;
+    }
+    .feature-card__price {
+        font-size: 21px;
+        padding: 0;
+    }
+    .card__info {
+        padding-top: 15px;
+    }
+    .tabs li a {
+        font-size: 12px;
+        height: 52px;
+    line-height: 16px;
+    }
+    .item-product__image {
+    height: 125px;
+}
+.slider-products .item-product {
+    min-height: 282px;
+}
+.table-feature table td {
+    padding: 9px 12px;
+}
+.table-feature table {
+    font-size: 13px;
 }
 }
 

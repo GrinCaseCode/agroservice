@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	
 	//кнопка sandwich
-$has_child = $(".menu li").has("ul");
+	$has_child = $(".menu li").has("ul");
 	//кнопка sandwich
 	$(".btn-menu_menu").click(function() {
 		$(".sidebar-nav").slideUp(200);
@@ -23,22 +23,22 @@ $has_child = $(".menu li").has("ul");
 
 
 
-		$(".menu li a").click(function(e) {
-			if ($(this).parent().hasClass("has_child")) {
+		$(".menu li:not(.has_child) a").click(function(e) {
 				e.preventDefault();
-
-			if ($(this).siblings("ul").is(":hidden")) {
-			$(this).siblings("ul").slideDown(200);
-		} else {
-			$(this).siblings("ul").slideUp(200);
-		}
-			} else {
 				$(".menu").slideUp(200);
 				$(".btn-menu_menu .sandwich").removeClass("active");
-			}
 		});
 		
 	});
+
+	$(".menu li.has_child a").click(function(e) {
+				e.preventDefault();
+			if ($(this).siblings("ul").is(":hidden")) {
+					$(this).siblings("ul").slideDown(200);
+				} else {
+					$(this).siblings("ul").slideUp(200);
+				}
+		});
 
 	$(".btn-menu_catalog").click(function() {
 		$(".menu").slideUp(200);
@@ -50,30 +50,44 @@ $has_child = $(".menu li").has("ul");
 		} else {
 			$(".sidebar-nav").slideUp(200);
 		}
-		$(".sidebar-nav").click(function(e) {
-			$(".btn-menu_catalog .sandwich").removeClass("active");
-			$(".sidebar-nav").slideUp(200);
-		});	
-});
 
-$(".btn-sidebar").click(function(e) {
-	e.preventDefault();
-	$(this).find(".sandwich").toggleClass("active");
-		$(".sidebar-content").slideToggle(200);
-});
-	
 
-	 {
-    if ($(window).width() < 768) { 
-
-     $(".title-footer").click(function(e) {
-		$(this).toggleClass("active");
-			$(this).next(".footer__content").slideToggle(200);
+		$(".sidebar-nav li:not(.has_child) a").click(function(e) {
+				e.preventDefault();
+				$(".sidebar-nav").slideUp(200);
+				$(".btn-menu_catalog .sandwich").removeClass("active");
 		});
 
+		
+	});
 
-    }
-  }
+	$(".sidebar-nav li.has_child a").click(function(e) {
+				e.preventDefault();
+			if ($(this).siblings("ul").is(":hidden")) {
+					$(this).siblings("ul").slideDown(200);
+				} else {
+					$(this).siblings("ul").slideUp(200);
+				}
+		});
+
+	$(".btn-sidebar").click(function(e) {
+		e.preventDefault();
+		$(this).find(".sandwich").toggleClass("active");
+		$(".sidebar-content").slideToggle(200);
+	});
+	
+
+	{
+		if ($(window).width() < 768) { 
+
+			$(".title-footer").click(function(e) {
+				$(this).toggleClass("active");
+				$(this).next(".footer__content").slideToggle(200);
+			});
+
+
+		}
+	}
 	/*высота блока по экрану*/
 	function heightDetect() {
 		$('.menu').css("height", $(window).height() -$(".header").height() + 60);
@@ -84,7 +98,7 @@ $(".btn-sidebar").click(function(e) {
 	});
 
 
-function heightDetect2() {
+	function heightDetect2() {
 		$('.sidebar-nav').css("height", $(window).height() -$(".header").height() + 60);
 	};
 	heightDetect2();
@@ -235,8 +249,61 @@ function heightDetect2() {
 		]
 	});
 
+	$('.slider-for').slick({
+		arrows: false,
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		asNavFor: '.slider-nav',
+		slidesToScroll: 1,
+	});
+
+	$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		focusOnSelect: true,
+		asNavFor: '.slider-for',
+		arrows: false,
+		dots: false,
+	});
+
+	$('.slider-products').slick({
+		arrows: true,
+		dots: false,
+		infinite: true,
+		slidesToShow: 3,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+		slidesToScroll: 1,
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 2,
+				
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				
+			}
+		}
+		]
+	});
+
 
 	$(".input-phone").mask("+7 (999) 999-99-99");
+
+	$('.tabs li a').click(function(event) {
+		event.preventDefault();
+		$(this).parent().parent().find("li").removeClass('active');
+		$(this).parent().addClass('active');
+		$(this).parent().parent().siblings(".tab-container").find(".tab-pane").fadeOut(0);
+		var selectTab = $(this).attr("href");
+		$(selectTab).fadeIn(100);
+	});
 
 	 // стайлер для select
 	 $('select').styler();
