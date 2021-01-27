@@ -577,7 +577,9 @@ body {
 .image-exhibition {
     height: 380px;
 }
-
+.header-wrap_page .sidebar-content {
+    display: block;
+}
 }
 
 /* Small Devices, Tablets */
