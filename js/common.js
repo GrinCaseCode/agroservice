@@ -305,6 +305,36 @@ $(document).ready(function() {
 		$(selectTab).fadeIn(100);
 	});
 
+	$('.tabs-about li a').click(function(event) {
+		event.preventDefault();
+		$(this).parent().parent().find("li").removeClass('active');
+		$(this).parent().addClass('active');
+		$(this).parent().parent().siblings(".tab-container-about").find(".tab-pane-about").fadeOut(0);
+		var selectTab2 = $(this).attr("href");
+		$(selectTab2).fadeIn(100);
+	});
+
+	{
+		if ($(window).width() < 480) { 
+
+			/*scroll to tabs*/
+
+			$('.tabs-about a').on( 'click', function(){ 
+				var el = $(this);
+				var dest = el.attr('href'); 
+				if(dest !== undefined && dest !== '') { 
+					$('html').animate({ 
+						scrollTop: $(dest).offset().top - 90
+        }, 500 // скорость прокрутки
+        );
+				}
+				return false;
+			});
+
+
+		}
+	}
+
 	 // стайлер для select
 	 $('select').styler();
 

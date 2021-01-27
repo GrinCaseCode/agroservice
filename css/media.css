@@ -64,6 +64,9 @@
 .sidebar-nav {
     width: 305px;
     }
+    .item-sertificat__image {
+    height: 417px;
+}
 }
 
 
@@ -134,6 +137,21 @@ display: none;
     }
     .sidebar-nav {
     width: 270px;
+    }
+    .about .title-middle {
+        padding-top: 0;
+    }
+    .tab-container-about {
+        padding-top: 40px;
+    }
+    .item-sertificat__image {
+    height: 369px;
+}
+.item-employee__image {
+    height: 290px;
+    }
+    .item-service__image {
+        height: 210px;
     }
 }
 /* Large Devices, Wide Screens */
@@ -245,6 +263,34 @@ body {
 }
 .recomendation {
     padding-bottom: 50px;
+}
+.item-partner {
+    height: 110px;
+    }
+    .wrap-item-partner {
+        padding: 0 5px;
+    }
+    .wrapper-partners {
+        margin: 0 -5px;
+    }
+    .tabs-about li a {
+    width: 190px;
+}
+.item-sertificat__image {
+    height: 284px;
+    margin-bottom: 15px;
+}
+.tab-container-about .block-form {
+   padding: 25px 20px;
+}
+.item-employee__image {
+    height: 250px;
+}
+.item-employee__name {
+    font-size: 16px;
+}
+.services .block-form {
+    padding: 25px 15px;
 }
 }
 
@@ -492,6 +538,46 @@ body {
 .card {
     min-height: auto;
 }
+.about .title-section {
+    padding-bottom: 20px;
+}
+.tabs-about li a {
+    width: 100%;
+}
+.tabs-about li {
+    flex: 1;
+}
+.about .item-dealer {
+    margin-bottom: 20px;
+}
+.about__image {
+    margin-bottom: 30px;
+}
+.item-partner {
+    height: 90px;
+}
+.about {
+    padding-bottom: 55px;
+}
+.about .title-middle {
+    padding-bottom: 20px;
+}
+.item-sertificat {
+    max-width: 206px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.image-exhibition {
+    margin-bottom: 30px;
+}
+.services .block-form,
+.tab-container-about .block-form {
+    padding: 45px 40px;
+}
+.image-exhibition {
+    height: 380px;
+}
+
 }
 
 /* Small Devices, Tablets */
@@ -800,6 +886,61 @@ body {
 .table-feature table td:last-child {
     border-right: none;
 }
+.tabs-about li a {
+    font-size: 12px;
+}
+.tabs-about {
+    margin: 0 -5px;
+}
+.tabs-about li {
+    padding: 0 5px;
+}
+.wrap-item-partner {
+    width: 24.5%;
+    padding: 5px;
+    }
+    .tab-container-about {
+        padding-top: 30px;
+    }
+    .about .item-dealer__name {
+    font-size: 14px;
+}
+.tab-container-about .location-text {
+    margin-bottom: 20px;
+}
+.image-exhibition {
+    height: 283px;
+}
+.row_employee > div {
+    margin-top: 25px;
+}
+.services .descr-title {
+    padding-bottom: 23px;
+}
+.descr-title {
+    padding-top: 15px;
+}
+.row_services > div {
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+.row_services {
+    margin: 0 -5px;
+}
+.item-service {
+    padding: 13px;
+    padding-bottom: 20px;
+    }
+    .item-service__name {
+        font-size: 15px;
+    }
+    .item-service__image {
+    height: 193px;
+    margin-bottom: 20px;
+}
+.services .block-form {
+    margin-top: 25px;
+}
 }
 @media (max-width: 576px) {
     .item-article {
@@ -1034,6 +1175,81 @@ body {
 .table-feature table {
     font-size: 13px;
 }
+.tabs-about li {
+    flex: inherit;
+    width: 50%;
+    margin-bottom: 10px;
+}
+.tabs-about {
+    flex-wrap: wrap;
+}
+.tabs-about li a {
+    font-size: 13px;
+}
+.item-partner {
+    height: 80px;
+}
+.about {
+    padding-bottom: 40px;
+}
+.item-sertificat__image {
+    height: 187px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.item-sertificat {
+    max-width: 130px;
+    margin-bottom: 15px;
+}
+.item-sertificat__name {
+    font-size: 12px;
+}
+.image-exhibition {
+    height: auto;
+}
+.image-exhibition img {
+    width: inherit;
+    object-fit: inherit;
+    font-family: inherit;
+    height: auto;
+    max-width: 100%;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.services .block-form,
+.tab-container-about .block-form {
+    padding: 25px 20px;
+}
+.row_employee > div {
+    padding: 0 5px;
+}
+.row_employee {
+    margin: 0 -5px;
+}
+.item-employee__image {
+    height: 195px;
+        background-size: 40px auto;
+    margin-bottom: 15px;
+}
+.item-employee__name {
+    font-size: 14px;
+        margin-bottom: 9px;
+}
+.item-employee__position {
+    font-size: 12px;
+}
+.item-service__image {
+    height: 133px;
+    margin-bottom: 13px;
+}
+.item-service__name {
+    font-size: 13px;
+}
+.item-service {
+    padding: 8px;
+    padding-bottom: 13px;
+}
 }
 
 /* Custom, iPhone Retina */
@@ -1093,6 +1309,9 @@ body {
 	.container {
     max-width: 1520px;
 }
+.item-sertificat__image {
+    height: 491px;
+    }
 }
 @media (min-width: 1600px) {
 	.container {
