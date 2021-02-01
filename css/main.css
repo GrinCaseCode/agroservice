@@ -1,7 +1,7 @@
 *::-webkit-input-placeholder {
 	color: #000;
 	opacity: 1;
-}
+}  
 *:-moz-placeholder {
 	color: #000;
 	opacity: 1;
@@ -1796,11 +1796,13 @@ p {
 	border-radius: 8px;
 	transition: all 0.3s;
 }
+	
 .tabs-about li.active a,
 .tabs-about li a:hover {
 	background-color: #3AA97C;
 	color: #fff;
 }
+
 .about .title-section {
 	padding-bottom: 38px;
 }
@@ -1879,6 +1881,7 @@ p {
 	border-radius: 8px;
 	transition: all 0.3s;
 }
+
 .item-sertificat__image img {
 	height: 100%;
 	width: 100%;
@@ -1904,6 +1907,7 @@ p {
 	padding-left: 25px;
 	position: relative;
 }
+
 .location-text::before {
 	position: absolute;
 	display: block;
@@ -1916,6 +1920,8 @@ p {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+
 .image-exhibition {
 	height: 463px;
 }
