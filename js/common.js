@@ -3,10 +3,28 @@ $(document).ready(function() {
 	//плавный скролл
 	$(".navigat li a").mPageScroll2id();
 
+//прилипающие меню
+var $menu = $(".header");
+$(window).scroll(function(){
+  if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+    $menu.removeClass("default").addClass("fixed");
+  } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+    $menu.removeClass("fixed").addClass("default");
+  }
+  
+});
 
+if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
+    $menu.removeClass("default").addClass("fixed");
+  } else if($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
+    $menu.removeClass("fixed").addClass("default");
+  }
 	
 	//кнопка sandwich
 	$has_child = $(".menu li").has("ul");
+	$has_child2 = $(".sidebar-nav li").has("ul");
+	$has_child2.addClass("has_child");
+	$(".sidebar-nav .has_child > a").append('<i class="fas fa-chevron-down"></i>');
 	//кнопка sandwich
 	$(".btn-menu_menu").click(function() {
 		$(".sidebar-nav").slideUp(200);
@@ -20,6 +38,7 @@ $(document).ready(function() {
 		}
 
 		$has_child.addClass("has_child");
+
 
 
 
@@ -44,6 +63,9 @@ $(document).ready(function() {
 		$(".menu").slideUp(200);
 		$(".btn-menu_menu .sandwich").removeClass("active");
 
+		
+		
+
 		$(this).find(".sandwich").toggleClass("active");
 		if ($(".sidebar-nav").is(":hidden")) {
 			$(".sidebar-nav").slideDown(200);
@@ -52,7 +74,7 @@ $(document).ready(function() {
 		}
 
 
-		$(".sidebar-nav li:not(.has_child) a").click(function(e) {
+		$(".sidebar-nav li:not(.has_child) > a").click(function(e) {
 				e.preventDefault();
 				$(".sidebar-nav").slideUp(200);
 				$(".btn-menu_catalog .sandwich").removeClass("active");
@@ -293,6 +315,42 @@ $(document).ready(function() {
 		]
 	});
 
+	$('.wrapper-partners').slick({
+		arrows: true,
+		dots: false,
+		infinite: true,
+		slidesToShow: 8,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+		slidesToScroll: 1,
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 4,
+				
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 3,
+				
+			}
+		}
+		]
+	});
+
+	$('.slider-exhibition').slick({
+		arrows: false,
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+		slidesToScroll: 1,
+	});
+
 
 	$(".input-phone").mask("+7 (999) 999-99-99");
 
@@ -305,35 +363,7 @@ $(document).ready(function() {
 		$(selectTab).fadeIn(100);
 	});
 
-	$('.tabs-about li a').click(function(event) {
-		event.preventDefault();
-		$(this).parent().parent().find("li").removeClass('active');
-		$(this).parent().addClass('active');
-		$(this).parent().parent().siblings(".tab-container-about").find(".tab-pane-about").fadeOut(0);
-		var selectTab2 = $(this).attr("href");
-		$(selectTab2).fadeIn(100);
-	});
-
-	{
-		if ($(window).width() < 480) { 
-
-			/*scroll to tabs*/
-
-			$('.tabs-about a').on( 'click', function(){ 
-				var el = $(this);
-				var dest = el.attr('href'); 
-				if(dest !== undefined && dest !== '') { 
-					$('html').animate({ 
-						scrollTop: $(dest).offset().top - 90
-        }, 500 // скорость прокрутки
-        );
-				}
-				return false;
-			});
-
-
-		}
-	}
+	
 
 	 // стайлер для select
 	 $('select').styler();

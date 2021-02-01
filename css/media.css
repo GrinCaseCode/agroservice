@@ -1,4 +1,13 @@
 /*==========  Desktop First Method  ==========*/
+@media only screen and (max-height : 760px) {
+.sidebar_articles .item-article {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+.sidebar_articles  .item-article__text {
+    margin-bottom: 10px;
+}
+}
 @media only screen and (max-width : 1565px) {
 .slider-billbord .slick-next {
     left: 515px;
@@ -67,6 +76,9 @@
     .item-sertificat__image {
     height: 417px;
 }
+.tabs li a {
+    width: 237px;
+    }
 }
 
 
@@ -153,6 +165,12 @@ display: none;
     .item-service__image {
         height: 210px;
     }
+    .tabs li a {
+    width: 212px;
+}
+.row_category .item-catalog__name {
+    padding: 0;
+}
 }
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
@@ -289,8 +307,13 @@ body {
 .item-employee__name {
     font-size: 16px;
 }
+.page-service .block-form,
 .services .block-form {
     padding: 25px 15px;
+}
+.tabs li a {
+    width: 153px;
+    font-size: 14px;
 }
 }
 
@@ -567,18 +590,55 @@ body {
     margin-top: 0;
     margin-bottom: 25px;
 }
-.image-exhibition {
+.slider-exhibition {
     margin-bottom: 30px;
 }
+.page-service .block-form,
 .services .block-form,
 .tab-container-about .block-form {
     padding: 45px 40px;
 }
+
 .image-exhibition {
     height: 380px;
 }
 .header-wrap_page .sidebar-content {
     display: block;
+}
+.tabs li a {
+    width: 157px;
+    }
+    .title-middle_partners {
+        padding-right: 117px;
+    }
+    .content-sidebar-article {
+        position: relative;
+        top: 0;
+    }
+    .services .block-form {
+        top: 0;
+        margin-top: 0;
+    }
+    .wrapper {
+        overflow: hidden;
+    }
+    .nav_hidden {
+        display: none !important;
+    }
+    .header {
+        position: relative;
+    }
+    .page-service .block-form {
+        margin-top: 0;
+    }
+    .page-service .title-section {
+        padding-bottom: 30px;
+    }
+    .row_finance > div {
+    margin-top: 25px;
+}
+.finance {
+    padding-bottom: 60px;
 }
 }
 
@@ -943,6 +1003,55 @@ body {
 .services .block-form {
     margin-top: 25px;
 }
+.tab-container {
+    border-top-right-radius: 0px;
+}
+.tab-container {
+    min-height: auto;
+}
+.row_docs {
+    padding-bottom: 30px;
+}
+.about .title-middle_partners {
+    padding-bottom: 0;
+}
+.wrapper-partners .slick-arrow {
+    top: -41px;
+}
+.arrows_right .slick-arrow {
+    right: 0;
+}
+.arrows_right .slick-prev {
+    right: 58px;
+}
+.row_category .item-catalog__image {
+    height: 155px;
+}
+.row_category > div {
+    margin-top: 10px;
+    padding: 0 5px;
+}
+.row_category {
+    margin: 0 -5px;
+}
+.row_category .item-catalog {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+.category {
+    padding-bottom: 40px;
+}
+.page-service .title-section {
+    padding-bottom: 15px;
+}
+.page-service .title-middle {
+    padding-top: 23px;
+}
+.finance {
+    padding-bottom: 40px;
+}
 }
 @media (max-width: 576px) {
     .item-article {
@@ -1192,7 +1301,7 @@ body {
     height: 80px;
 }
 .about {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 .item-sertificat__image {
     height: 187px;
@@ -1219,6 +1328,7 @@ body {
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+.page-service .block-form,
 .services .block-form,
 .tab-container-about .block-form {
     padding: 25px 20px;
@@ -1251,6 +1361,35 @@ body {
 .item-service {
     padding: 8px;
     padding-bottom: 13px;
+}
+.about .title-middle_partners {
+    padding-right: 0;
+    padding-bottom: 60px;
+}
+.item-catalog__name span {
+    display: inline-block;
+}
+.row_category .item-catalog__image {
+    height: 130px;
+}
+.row_category .item-catalog {
+    font-size: 11px;
+}
+.page-service .title-middle {
+    padding-bottom: 15px;
+}
+.page-service p, .page-service .list-arrows li {
+    margin-bottom: 15px;
+}
+.page-service {
+    padding-top: 20px;
+}
+.item-finance__name {
+    font-size: 16px;
+    padding-bottom: 14px;
+}
+.item-finance__bottom {
+    padding-top: 15px;
 }
 }
 
@@ -1292,6 +1431,9 @@ body {
     display: block !important;
     height: auto !important;
 }
+.fixed .logo img {
+    width: 104px;
+}
 }
 @media only screen and (min-width : 1320px) {
 .container {
@@ -1319,6 +1461,9 @@ body {
 	.container {
     max-width: 1520px;
 }
+.tabs li a {
+    width: 279px;
+    }
 }
 
 @media only screen and (min-width : 1869px) {
