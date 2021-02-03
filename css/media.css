@@ -604,7 +604,10 @@ body {
     height: 380px;
 }
 .header-wrap_page .sidebar-content {
-    display: block;
+    display: block !important;
+    position: relative;
+    top: 0;
+    max-width: 100%;
 }
 .tabs li a {
     width: 157px;

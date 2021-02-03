@@ -397,7 +397,6 @@ p {
 	position: absolute;
 	padding-bottom: 60px;
 	top: 100%;
-	left: 0;
 	min-height: 643px;
 	background-color: #3aa97c;
 	width: 100%;
@@ -2297,4 +2296,40 @@ border-radius: 6px;
 }
 .row_finance > div {
 	margin-top: 45px;
+}
+.sidebar-content__fixed {
+	position: fixed;
+	max-width: 339px;
+	top: 71px;
+}
+.nav_hidden .nav-wrap {
+	padding-left: 339px;
+}
+.nav_hidden .sidebar-nav {
+	position: absolute;
+	left: 15px;
+	top: 0;
+}
+.nav_hidden .container {
+	position: relative;
+}
+.nav_hidden .btn-sidebar {
+	height: 55px;
+}
+.default + .nav .sidebar-content__fixed {
+	position: relative;
+	top: 0;
+}
+
+.header-wrap_page .sidebar-content {
+	position: fixed;
+	top: 162px;
+	max-width: 339px;
+}
+.header-wrap_page .default + .nav .sidebar-content__fixed {
+	position: relative;
+	top: 0;
+}
+.header-wrap_page .fixed + .nav .sidebar-content {
+	top: 135px;
 }

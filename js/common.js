@@ -6,20 +6,26 @@ $(document).ready(function() {
 //прилипающие меню
 var $menu = $(".header");
 $(window).scroll(function(){
-  if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
-    $menu.removeClass("default").addClass("fixed");
-  } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
-    $menu.removeClass("fixed").addClass("default");
-  }
-  
+	if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+		$menu.removeClass("default").addClass("fixed");
+	} else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+		$menu.removeClass("fixed").addClass("default");
+		$(".sidebar-content").removeClass("sidebar-content__fixed");
+		$(".wrapper_opendsidebar .sidebar-content").slideDown(200);
+
+	}
+
 });
 
 if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
-    $menu.removeClass("default").addClass("fixed");
-  } else if($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
-    $menu.removeClass("fixed").addClass("default");
-  }
-	
+	$menu.removeClass("default").addClass("fixed");
+	$(".wrapper:not(.wrapper_opendsidebar) .sandwich").removeClass("active");
+} else if($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
+	$menu.removeClass("fixed").addClass("default");
+	$(".sidebar-content").removeClass("sidebar-content__fixed");
+	$(".wrapper_opendsidebar .sidebar-content").slideDown(200);
+}
+
 	//кнопка sandwich
 	$has_child = $(".menu li").has("ul");
 	$has_child2 = $(".sidebar-nav li").has("ul");
@@ -31,7 +37,7 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		$(".btn-menu_catalog .sandwich").removeClass("active");
 
 		$(this).find(".sandwich").toggleClass("active");
-		if ($(".menu").is(":hidden")) {
+		if ($(this).find(".sandwich").hasClass("active")) {
 			$(".menu").slideDown(200);
 		} else {
 			$(".menu").slideUp(200);
@@ -40,64 +46,90 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		$has_child.addClass("has_child");
 
 
-
-
 		$(".menu li:not(.has_child) a").click(function(e) {
-				e.preventDefault();
-				$(".menu").slideUp(200);
-				$(".btn-menu_menu .sandwich").removeClass("active");
+			e.preventDefault();
+			$(".menu").slideUp(200);
+			$(".btn-menu_menu .sandwich").removeClass("active");
 		});
 		
 	});
 
-	$(".menu li.has_child a").click(function(e) {
-				e.preventDefault();
-			if ($(this).siblings("ul").is(":hidden")) {
-					$(this).siblings("ul").slideDown(200);
-				} else {
-					$(this).siblings("ul").slideUp(200);
-				}
-		});
+	
 
 	$(".btn-menu_catalog").click(function() {
 		$(".menu").slideUp(200);
 		$(".btn-menu_menu .sandwich").removeClass("active");
 
-		
-		
-
 		$(this).find(".sandwich").toggleClass("active");
-		if ($(".sidebar-nav").is(":hidden")) {
+		if ($(this).find(".sandwich").hasClass("active")) {
 			$(".sidebar-nav").slideDown(200);
 		} else {
 			$(".sidebar-nav").slideUp(200);
 		}
 
-
 		$(".sidebar-nav li:not(.has_child) > a").click(function(e) {
-				e.preventDefault();
-				$(".sidebar-nav").slideUp(200);
-				$(".btn-menu_catalog .sandwich").removeClass("active");
+			e.preventDefault();
+			$(".sidebar-nav").slideUp(200);
+			$(".btn-menu_catalog .sandwich").removeClass("active");
 		});
-
 		
 	});
+	{
+		if ($(window).width() < 992) { 
 
-	$(".sidebar-nav li.has_child a").click(function(e) {
+			$(".sidebar-nav li.has_child a").click(function(e) {
 				e.preventDefault();
-			if ($(this).siblings("ul").is(":hidden")) {
+				if ($(this).siblings("ul").is(":hidden")) {
 					$(this).siblings("ul").slideDown(200);
 				} else {
 					$(this).siblings("ul").slideUp(200);
 				}
-		});
+			});
 
-	$(".btn-sidebar").click(function(e) {
+			$(".menu li.has_child a").click(function(e) {
+				e.preventDefault();
+				if ($(this).siblings("ul").is(":hidden")) {
+					$(this).siblings("ul").slideDown(200);
+				} else {
+					$(this).siblings("ul").slideUp(200);
+				}
+			});	
+
+		}
+	}
+	
+
+	$(".wrapper_opendsidebar .nav:not(.nav_hidden) .btn-sidebar").click(function(e) {
 		e.preventDefault();
-		$(this).find(".sandwich").toggleClass("active");
 		$(".sidebar-content").slideToggle(200);
 	});
-	
+
+	$(".wrapper:not(.wrapper_opendsidebar) .btn-sidebar").click(function(e) {
+		e.preventDefault();
+		$(".sandwich").toggleClass("active");
+		$(".sidebar-content").slideToggle(200);
+	});
+
+	$(".wrapper_opendsidebar .btn-sidebar").click(function(e) {
+		e.preventDefault();
+		$(this).find(".sandwich").toggleClass("active");
+	});
+
+
+	$(".wrapper_opendsidebar .nav_hidden .btn-sidebar").click(function(e) {
+		e.preventDefault();
+		
+		
+		if ($(".sidebar-nav").hasClass("sidebar-content__fixed")) {
+			$(".sidebar-nav").removeClass("sidebar-content__fixed");
+			$(".sidebar-content").slideUp(200);
+		} else {
+			$(".sidebar-nav").addClass("sidebar-content__fixed");
+			$(".sidebar-content").slideDown(200);
+		}
+	});
+
+
 
 	{
 		if ($(window).width() < 768) { 
